@@ -1,0 +1,14 @@
+812px for works 
+margin between -9px
+margin-left for titles -21px
+distance between link to view work and title - 16px
+our work main title 50px
+subheading 8px - lineheight 14px
+
+title 27px bold
+subtitle 14px/20px
+
+
+533px bigone
+270px small one
+height:300px

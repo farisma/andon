@@ -1,0 +1,49 @@
+h1, h2, h3 {
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+h1 {
+    font-size: 2rem;
+
+    @media #{$mq-1000-up}{
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+
+    @media #{$mq-1000-up}{
+        font-size: 2rem;
+    }
+}
+
+h3 {
+    font-size: 1.25rem;
+
+    @media #{$mq-1000-up}{
+        font-size: 1.5rem;
+    }
+}
+@mixin swissbold {
+    font-family: 'Conv_Swis721_BT_Bold';
+}
+@mixin swissbolditalic {
+    font-family: 'Conv_Swis721_Cn_BT_Bold_Italic';
+}
+
+@mixin swissitalic {
+    font-family: 'Conv_Swis721_BT_Italic';
+}
+@mixin swisslightitalic {
+    font-family:'Conv_Swis721_Lt_BT_Light_Italic';
+    
+}
+@mixin swissthinitalic {
+    font-family:'Conv_Swis721_Th_BT_Thin_Italic';
+}
+
+@mixin swisslight {
+    font-family:'Conv_Swis721_Lt_BT_Light',Sans-Serif;
+}
