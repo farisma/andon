@@ -70,7 +70,7 @@ var app = {
         var that = this;
         var slideDist = this.findContentSlideDistance();
         setTimeout(function()  { 
-        console.log("doc-"+$(document).height()+"window"+$(window).height())
+        alert("doc-"+$(document).height()+"window"+$(window).height())
             if(that.checkHasClass(that.wrapper,that.slidedUpContentClass))        
            // that.wrapper.removeClass(that.slidedUpContentClass)
            {
