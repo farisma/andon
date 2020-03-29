@@ -19,7 +19,10 @@
   "bugs": {
     "url": "https://github.com/thecodercoder/frontend-boilerplate/issues"
   },
-  "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
+  "scripts":{
+    "deploy":"gh-pages -d dist"
+  },
+  "homepage": "https://farisma.github.io/andon",
   "devDependencies": {
     "autoprefixer": "^9.7.0",
     "cssnano": "^4.1.10",
@@ -32,6 +35,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "gsap": "^3.2.4",
     "jquery": "^3.4.1"
   }
