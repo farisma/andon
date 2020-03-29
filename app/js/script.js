@@ -61,10 +61,10 @@ var app = {
         return res;    
      },
      findWinWidth: function(){
-         return $(window).width();
+         return $(document).width();
      },
      findWinHeight: function(){
-        return $(window).height();
+        return $(document).height();
      },
      slideDown: function(secs) {
         var that = this;
