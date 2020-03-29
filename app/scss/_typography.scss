@@ -47,3 +47,16 @@ h3 {
 @mixin swisslight {
     font-family:'Conv_Swis721_Lt_BT_Light',Sans-Serif;
 }
+
+@mixin swissblackcondensed {
+    
+    font-family: 'Conv_Swiss 721 Black Condensed BT';
+}
+
+@mixin swissBT {
+    font-family: 'Conv_Swiss 721 BT';
+}
+
+@mixin swissRomanCond {
+    font-family: 'Swiss721BT-RomanCondensed';
+}

@@ -1,4 +1,7 @@
 // Media Queries
+
+$mq-400-down: "only screen and (max-width: 400px)";
+
 $mq-620-down: "only screen and (max-width: 620px)";
 $mq-620-up: "only screen and (min-width: 620px)";
 
@@ -16,3 +19,7 @@ $mq-1180-up: "only screen and (min-width: 1180px)";
 $mq-1400-up: "only screen and (min-width: 1400px)";
 
 $mq-1680-up: "only screen and (min-width: 1680px)";
+$mq-992-down:"only screen and (max-width: 992px)";
+
+$mq-1000-down-landscape: "only screen and (max-width: 999px) and (orientation: landscape)";
+$mq-700-down-landscape: "only screen and (max-width: 700px) and (orientation: landscape)";
