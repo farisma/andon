@@ -69,6 +69,29 @@
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+	font-family: 'Conv_Swiss 721 Condensed BT';
+	src: url('fonts/swiss/Swiss 721 Condensed BT.eot');
+	src: local('☺'), url('fonts/swiss/Swiss 721 Condensed BT.woff') format('woff'), url('fonts/swiss/Swiss 721 Condensed BT.ttf') format('truetype'), url('fonts/swiss/Swiss 721 Condensed BT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Swiss 721 Light Condensed BT';
+	src: url('fonts/swiss/Swiss 721 Light Condensed BT.eot');
+	src: local('☺'), url('fonts/swiss/Swiss 721 Light Condensed BT.woff') format('woff'), url('fonts/swiss/Swiss 721 Light Condensed BT.ttf') format('truetype'), url('fonts/swiss/Swiss 721 Light Condensed BT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_Swiss 721 Bold Condensed BT';
+	src: url('fonts/swiss/Swiss 721 Bold Condensed BT.eot');
+	src: local('☺'), url('fonts/swiss/Swiss 721 Bold Condensed BT.woff') format('woff'), url('fonts/swiss/Swiss 721 Bold Condensed BT.ttf') format('truetype'), url('fonts/swiss/Swiss 721 Bold Condensed BT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 .intro-video {
     position: absolute;
     top:0;
@@ -198,17 +221,23 @@
           margin-top:auto;
           p{
               color:#fff;
-              @include swisslight;
+              @include swissCondensed;
+              letter-spacing: 2px;
               font-size:13px;
               text-align:center;
               text-transform: uppercase;
+              font-weight:normal;
+              padding-top:13px;
+              padding-bottom:13px;
               a{
                   text-decoration:none;
                   color:#fff;
-                    @include swisslight;
+                    @include swissCondensed;
+                    font-weight:normal;
                     font-size:13px;
                     text-align:center;
                     text-transform: uppercase;
+                    letter-spacing:2px;
               }
           }
           .social {
@@ -267,7 +296,8 @@
           }
           p.intro-copy {
               color: #fff;
-              @include swisslight;
+              @include swissCondensed;
+              letter-spacing:2px;
               text-align:center;
               font-size:10px;
               padding-bottom:20px;
@@ -323,27 +353,28 @@
         list-style:none;               
         padding:0;
         margin:0;        
-        line-height: 31px;
+        line-height: 34px;
         transform: translateX(-50px);
         opacity:0;
         transition: 1s; 
         text-align: right;
         @media #{$mq-1000-down} {
-            line-height:20px;
+            line-height:22px;
 
         }
         a{
             transition: 1s; 
-            line-height: 31px;
+            line-height: 33px;
             text-transform:uppercase;
             font-size:60px;
             color:#fff;
             text-align: right;
             text-decoration:none;
+            letter-spacing:-2px;
             @include swissblackcondensed;
             @media #{$mq-1000-down} {
                 font-size:30px;
-                line-height:20px;
+                line-height:21px;
 
             }
             &.active {
@@ -447,14 +478,18 @@ right:0;
     margin-top:34px;
     margin-bottom:34px;
 text-align:right;
-font-style:italic;
-@include swissitalic;
+@include swissLightCondensed;
+letter-spacing: 1px;
 font-size:10px;
 color:#fff;
 text-transform:uppercase;
 margin-right:75px;
 padding-right:30px;
 border-right:3px solid #fff;
+a{
+    color:#fff;
+    text-decoration:none;
+}
 @media #{$mq-992-down} {
   margin-right:40px;
 }
@@ -501,6 +536,7 @@ p{
                 font-size:50px;
                 line-height:40px;
                 text-transform: uppercase;
+                letter-spacing: -2px;
                 @include swissblackcondensed;
                 color:#fff;
                 padding:0;
@@ -514,7 +550,9 @@ p{
             p{
                 font-size:8px;
                 line-height:14px;
-                @include swisslight;
+                @include swissCondensed;
+                letter-spacing:1px;
+                font-weight:normal;
                 color:#fff;
                 padding:0;
                 margin:0;
@@ -589,7 +627,7 @@ p{
                 justify-content: flex-end;
                 flex-direction: column;
                     h2{
-                        @include swissBT;
+                        @include swissBoldCondensed;
                         font-size:27px;
                         line-height:34px;
                         color:#fff;
@@ -598,23 +636,37 @@ p{
 
                     }
                     h3{
-                        @include swissRomanCond;
+                        @include swissCondensed;
                         font-size:18px;
                         line-height:24px;
                         color:#f6921e;
                         padding-left:21px;
                         padding-bottom:16px;
                         text-transform:uppercase;
+                        font-weight:normal;
                     }
                     a{
                         text-decoration:none;
                         color:#fff;
-                        @include swissBT;
+                        @include swissLightCondensed;
                         font-size:9px;
                         line-height:14px;
                         padding-left:21px;
                         padding-bottom:16px;
                         text-transform:uppercase;
+                        position:relative;
+                        &:after {
+                            position: absolute;
+                            content:'';
+                            left:66px;
+                            top:4px;
+                            width:5px;
+                            height:5px;
+                            border-right:.5px solid #fff;
+                            border-top:.5px solid #fff;
+                            transform: rotate(45deg);
+
+                        }
                     }
               }
           }

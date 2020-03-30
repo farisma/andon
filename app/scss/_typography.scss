@@ -60,3 +60,14 @@ h3 {
 @mixin swissRomanCond {
     font-family: 'Swiss721BT-RomanCondensed';
 }
+
+@mixin swissCondensed {
+    font-family: 'Conv_Swiss 721 Condensed BT';
+}
+
+@mixin swissLightCondensed {
+    font-family: 'Conv_Swiss 721 Light Condensed BT';
+}
+@mixin swissBoldCondensed {
+font-family: 'Conv_Swiss 721 Bold Condensed BT';
+}
