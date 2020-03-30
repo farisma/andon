@@ -64,7 +64,10 @@ var app = {
          return $(document).width();
      },
      findWinHeight: function(){
-        return $(document).height();
+        //return $(document).height();
+        //for avoiding outside bars height in ios
+        return (typeof window.outerHeight != 'undefined')?Math.max(window.outerHeight, $(window).height()):$(window).height()
+
      },
      slideDown: function(secs) {
         var that = this;
@@ -72,7 +75,6 @@ var app = {
         setTimeout(function()  { 
         //alert("doc-"+$(document).height()+"window"+$(window).height())
             if(that.checkHasClass(that.wrapper,that.slidedUpContentClass))        
-           // that.wrapper.removeClass(that.slidedUpContentClass)
            {
             var tl = new TimelineMax();  
               tl.to(that.wrapper, 1.5, {y:-120, ease:Linear.easeNone},"index")            
