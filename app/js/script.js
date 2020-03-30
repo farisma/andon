@@ -55,7 +55,7 @@ var app = {
           .from('.separatorline',.75,{width:0,ease:Linear.easeNone},"-=2.5")
           .staggerFrom('.intro-contact-details p.add-copy',1,{y:10,autoAlpha:0,ease:Linear.easeNone},.5,"-=1.5")
           .from('.social',0.5,{y:10,autoAlpha:0,ease:Linear.easeNone},"-=.5")
-         // .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this,1),ease:Linear.easeNone},"-=.25");
+          .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this,1),ease:Linear.easeNone},"-=.25");
     },
     checkHasClass:function(element,className){
         var res = element.hasClass(className)?true:false;   
