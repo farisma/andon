@@ -12,6 +12,7 @@ var app = {
     footerContentContact:'.contact-details',
     logo_menu_frontpage:'.front-page-slide-up .logo-wrap',
     nav_item:'#menu .nav-item',
+    homeVideo:$('#homeVideo'),
     findMenuWidth: function(){
         var winW = this.findWinWidth();
         return (winW>400)?400:winW;
@@ -54,7 +55,7 @@ var app = {
           .from('.separatorline',.75,{width:0,ease:Linear.easeNone},"-=2.5")
           .staggerFrom('.intro-contact-details p.add-copy',1,{y:10,autoAlpha:0,ease:Linear.easeNone},.5,"-=1.5")
           .from('.social',0.5,{y:10,autoAlpha:0,ease:Linear.easeNone},"-=.5")
-          .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this,1),ease:Linear.easeNone},"-=.25");
+         // .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this,1),ease:Linear.easeNone},"-=.25");
     },
     checkHasClass:function(element,className){
         var res = element.hasClass(className)?true:false;   
@@ -85,6 +86,14 @@ var app = {
            }
              
          }, secs);
+   },
+   getVideoURL:function(videoSrc){
+    var videoPaths = videoSrc.split('|');
+	return videoPaths;
+   },
+   getFormat:function(video){
+    var filetype = video.split('.')[1];
+	return filetype;
    }
 };
 $(document).ready(function () {
@@ -112,5 +121,34 @@ $(document).ready(function () {
         
       
     })
-    app.loadLogo();
+    //app.loadLogo();
 })
+
+$(window).on('load',function () { 
+    //alert('load')
+   
+    var videoElem = document.getElementById("homeVideo");
+    console.log(videoElem)
+		if (app.homeVideo.children().length == 0) {
+			var vidsrc = app.homeVideo.data('vid-src');
+			var videoURL = app.getVideoURL(vidsrc);
+			var videoSrcAppend = '';
+			videoURL.forEach(function (item) {
+				var videoFormat = app.getFormat(item);
+				if (videoFormat == "mp4") {
+					videoSrcAppend += '<source src="' + item + '" type="video/mp4">';
+				}
+				else if (videoFormat == "webm") {
+					videoSrcAppend += '<source src="' + item + '" type="video/webm">';
+				}
+				else {
+					videoSrcAppend += '<source src="' + item + '" type="video/ogg">';
+				}
+			});
+			app.homeVideo.html('');
+			app.homeVideo.append(videoSrcAppend);
+		}
+        app.homeVideo.trigger('play');
+        //console.log(app.homeVideo)
+        app.loadLogo();
+});
