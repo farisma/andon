@@ -77,7 +77,7 @@ var app = {
             if(that.checkHasClass(that.wrapper,that.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
-              tl.to(that.wrapper, 1.5, {y:-120, ease:Linear.easeNone},"index")            
+              tl.to(that.wrapper, 1.5, {top:slideDist, ease:Linear.easeNone},"index")            
               .to([that.introContent,'.landing-logo','.no-g'],0.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.1")    
               .to(that.logo_menu_frontpage,0.5,{y:120,ease:Linear.easeNone},"-=0.75")          
               .to(that.footerContent,0.5,{autoAlpha:1,ease:Linear.easeNone},"+=0.1")
