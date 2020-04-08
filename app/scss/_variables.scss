@@ -4,6 +4,7 @@ $mq-400-down: "only screen and (max-width: 400px)";
 
 $mq-620-down: "only screen and (max-width: 620px)";
 $mq-620-up: "only screen and (min-width: 620px)";
+$mq-620-up-landscape: "only screen and (min-width: 620px) and (orientation: landscape)";
 
 $mq-760-down: "only screen and (max-width: 759px)";
 $mq-760-up: "only screen and (min-width: 760px)";
@@ -13,13 +14,18 @@ $mq-900-up: "only screen and (min-width: 900px)";
 
 $mq-1000-down: "only screen and (max-width: 999px)";
 $mq-1000-up: "only screen and (min-width: 1000px)";
-
+$mq-1000-up-landscape: "only screen and (min-width: 1000px) and (orientation: landscape)";
+$mq-1000-up-portrait: "only screen and (min-width: 1000px) and (orientation: portrait)";
 $mq-1180-up: "only screen and (min-width: 1180px)";
 
 $mq-1400-up: "only screen and (min-width: 1400px)";
+$mq-1366-up: "only screen and (min-width: 1366px)";
 
 $mq-1680-up: "only screen and (min-width: 1680px)";
 $mq-992-down:"only screen and (max-width: 992px)";
 
 $mq-1000-down-landscape: "only screen and (max-width: 999px) and (orientation: landscape)";
-$mq-700-down-landscape: "only screen and (max-width: 700px) and (orientation: landscape)";
+$mq-760-down-landscape: "only screen and (max-width: 760px) and (orientation: landscape)";
+
+$mq-1000-down-portrait: "only screen and (max-width: 999px) and (orientation: portrait)";
+$mq-760-down-portrait: "only screen and (max-width: 760px) and (orientation: portrait)";
