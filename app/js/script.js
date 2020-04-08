@@ -67,7 +67,9 @@ var app = {
      findWinHeight: function(){
         //return $(document).height();
         //for avoiding outside bars height in ios
-        return (typeof window.outerHeight != 'undefined')?Math.max(window.outerHeight, $(window).height()):$(window).height()
+        console.log(window.outerHeight + 'outerH')
+        console.log($(window).height() + 'windowH')
+        return (typeof window.outerHeight != 'undefined')?Math.min(window.outerHeight, $(window).height()):$(window).height()
 
      },
      slideDown: function(secs) {
@@ -78,7 +80,7 @@ var app = {
             if(that.checkHasClass(that.wrapper,that.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
-              tl.to(that.wrapper, 1.5, {y:-120, ease:Linear.easeNone},"index")            
+              tl.to(that.wrapper, 1.5, {top:slideDist, ease:Linear.easeNone},"index")            
               .to([that.introContent,'.landing-logo','.no-g'],0.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.1")    
               .to(that.logo_menu_frontpage,0.5,{y:120,ease:Linear.easeNone},"-=0.75")          
               .to(that.footerContent,0.5,{autoAlpha:1,ease:Linear.easeNone},"+=0.1")
