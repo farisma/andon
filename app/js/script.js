@@ -55,7 +55,7 @@ var app = {
           .from('.separatorline',.75,{width:0,ease:Linear.easeNone},"-=2.5")
           .staggerFrom('.intro-contact-details p.add-copy',1,{y:10,autoAlpha:0,ease:Linear.easeNone},.5,"-=1.5")
           .from('.social',0.5,{y:10,autoAlpha:0,ease:Linear.easeNone},"-=.5")
-          .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this,1),ease:Linear.easeNone},"-=.25");
+          .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this),ease:Linear.easeNone},"-=.25");
     },
     checkHasClass:function(element,className){
         var res = element.hasClass(className)?true:false;   
@@ -72,22 +72,21 @@ var app = {
         return (typeof window.outerHeight != 'undefined')?Math.min(window.outerHeight, $(window).height()):$(window).height()
 
      },
-     slideDown: function(secs) {
+     slideDown: function() {
         var that = this;
-        var slideDist = this.findContentSlideDistance();
-        setTimeout(function()  { 
-        //alert("doc-"+$(document).height()+"window"+$(window).height())
+       // var slideDist = this.findContentSlideDistance();
+       /* setTimeout(function()  { */
             if(that.checkHasClass(that.wrapper,that.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
-              tl.to(that.wrapper, 1.5, {top:slideDist, ease:Linear.easeNone},"index")            
+              tl.to(that.wrapper, 1.5, {y:-120, ease:Linear.easeNone},"+=3.0")            
               .to([that.introContent,'.landing-logo','.no-g'],0.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.1")    
               .to(that.logo_menu_frontpage,0.5,{y:120,ease:Linear.easeNone},"-=0.75")          
               .to(that.footerContent,0.5,{autoAlpha:1,ease:Linear.easeNone},"+=0.1")
               
            }
              
-         }, secs);
+         /*}, secs);*/
    },
    getVideoURL:function(videoSrc){
     var videoPaths = videoSrc.split('|');

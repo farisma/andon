@@ -58,7 +58,7 @@ main {
     display:flex;
     flex-direction: column;
     &.front-page-slide-up {
-       transform: translateY(-100%);
+       transform: translateY(-75%);
         top:0;
     }
 }
