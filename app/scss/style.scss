@@ -337,7 +337,7 @@
     bottom:0;
     right:auto;
     left:-400px;
-    transition: .5s;    
+    /*transition: .5s;  */  
     overflow-y: auto;
     
     @media #{$mq-400-down} {
@@ -345,7 +345,7 @@
     }
   ul {
       padding:0;
-      margin:140px 0 0 0;
+      margin:350px 0 0 0;
       @media #{$mq-1000-down} {
         margin:106px 0 0 0;
 
@@ -456,17 +456,20 @@
         max-width:700px;
     }
     @media #{$mq-1366-up}{
-        max-width:600px;
+        max-width:700px;
     }
  
     @media #{$mq-1680-up} {
-        max-width:716px;
+        max-width:41%;
     }
-   
+    @media #{$mq-1921-up} {
+        max-width:41%;
+    }
  
    
     img {
         max-width:100%;
+        width:100%;
         position: relative;
         top:10px;
     }

@@ -12,7 +12,15 @@ var app = {
     footerContentContact:'.contact-details',
     logo_menu_frontpage:'.front-page-slide-up .logo-wrap',
     nav_item:'#menu .nav-item',
+    front_page_image:$('.front-page-main-copy img'),
+    
     homeVideo:$('#homeVideo'),
+    setMenuMargin: function(){
+      
+            var offset_top = $(this.front_page_image).offset().top;
+            this.menu.find('ul').css('margin-top',offset_top);
+            console.log(offset_top)
+    },
     findMenuWidth: function(){
         var winW = this.findWinWidth();
         return (winW>400)?400:winW;
@@ -57,6 +65,10 @@ var app = {
           .from('.social',0.5,{y:10,autoAlpha:0,ease:Linear.easeNone},"-=.5")
           .from('.intro-contact-details p.intro-copy',0.5,{y:10,autoAlpha:0,onComplete:this.slideDown.bind(this),ease:Linear.easeNone},"-=.25");
     },
+    alignMenu:function(){
+       var that = this;
+       that.setMenuMargin();
+    },
     checkHasClass:function(element,className){
         var res = element.hasClass(className)?true:false;   
         return res;    
@@ -79,12 +91,13 @@ var app = {
             if(that.checkHasClass(that.wrapper,that.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
-              tl.to(that.wrapper, 0.75, {y:-120, ease:Linear.easeNone})            
+              tl.to(that.wrapper, 0.75, {y:-120, ease:Linear.easeNone},"index")            
               .to([that.introContent,'.landing-logo','.no-g'],0.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.1")    
               .to(that.logo_menu_frontpage,0.5,{y:120,ease:Linear.easeNone},"-=0.75")          
-              .to(that.footerContent,0.5,{autoAlpha:1,ease:Linear.easeNone},"+=0.1")
+              .to(that.footerContent,0.5,{autoAlpha:1,ease:Linear.easeNone,onComplete:this.alignMenu.bind(this)},"+=0.1")
               
            }
+           
              
          /*}, secs);*/
    },
@@ -152,4 +165,5 @@ $(window).on('load',function () {
         app.homeVideo.trigger('play');
         //console.log(app.homeVideo)
         app.loadLogo();
+       
 });
